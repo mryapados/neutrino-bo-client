@@ -1,0 +1,16 @@
+{
+  "list": {
+    "toolbar": {
+        "btnAdd" : "Add",
+        "btnRemove" : "Remove",
+        "byPage" : "by page",
+        "sortBy" : "Sort by",
+        "sortASC" : "ASC",
+        "sortDESC" : "DESC",
+        "search" : "Search",
+        "searchGo" : "Go!",
+        "previous" : "Previous",
+        "next" : "Next"
+    }
+  }
+}

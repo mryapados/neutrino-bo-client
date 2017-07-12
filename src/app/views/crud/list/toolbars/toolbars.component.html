@@ -1,0 +1,78 @@
+                <div class="row">
+                    <div class="col-sm-8 m-b-xs">
+                        <div class="btn-toolbar" role="toolbar">
+                            <div class="btn-group" role="group" aria-label="...">
+                                <div class="btn-group dropdown" role="group">
+                                    <button id="top-page-size-btn" type="button" class="btn btn-sm btn-white dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <strong>20</strong> {{'list.toolbar.byPage' | translate}} <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu" role="menu" aria-labelledby="top-page-size-btn">
+                                        <li><a href="?type=Template&amp;size=10">10</a></li>
+                                        <li><a href="?type=Template&amp;size=25">25</a></li>
+                                        <li><a href="?type=Template&amp;size=50">50</a></li>
+                                        <li><a href="?type=Template&amp;size=100">100</a></li>
+                                    </ul>
+                                </div>
+                                <div class="btn-group dropdown" role="group">
+                                    <button id="top-sort-btn" type="button" class="btn btn-sm btn-white dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        {{'list.toolbar.sortBy' | translate}} <strong>Date created</strong> <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu" role="menu" aria-labelledby="top-sort-btn">
+                                        <li><a href="?type=Template&amp;sort=id%2cDESC">#</a></li>
+                                        <li><a href="?type=Template&amp;sort=name%2cDESC">Name</a></li>
+                                        <li><a href="?type=Template&amp;sort=dateAdded%2cDESC">Date created</a></li>
+                                        <li><a href="?type=Template&amp;sort=dateUpdated%2cDESC">Date updated</a></li>
+                                        <li><a href="?type=Template&amp;sort=description%2cDESC">Description</a></li>
+                                        <li><a href="?type=Template&amp;sort=lang%2cDESC">Lang</a></li>
+                                        <li><a href="?type=Template&amp;sort=controller%2cDESC">controller</a></li>
+                                        <li><a href="?type=Template&amp;sort=metaDescription%2cDESC">metaDescription</a></li>
+                                        <li><a href="?type=Template&amp;sort=metaTitle%2cDESC">metaTitle</a></li>
+                                        <li><a href="?type=Template&amp;sort=metaKeyWords%2cDESC">metaKeyWords</a></li>
+                                    </ul>
+                                </div>
+                                <a class="btn btn-sm btn-white" href="?type=Template&amp;sort=dateAdded%2cASC" role="button">{{'list.toolbar.sortASC' | translate}}</a>
+                                <a class="btn btn-sm btn-white active" href="?type=Template&amp;sort=dateAdded%2cDESC" role="button">{{'list.toolbar.sortDESC' | translate}}</a>
+                            </div>
+                            <div class="btn-group" role="group" aria-label="...">
+                                <div class="btn-group" role="group">
+                                    <button id="delete_button" type="submit" class="btn btn-sm btn-danger">
+                                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> {{'list.toolbar.btnRemove' | translate}}
+                                    </button>
+                                    <div class="btn-group dropdown" role="group">
+                                        <button id="add_button" class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> {{'list.toolbar.btnAdd' | translate}} <span class="lang-sm" lang="en"></span> <span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li><a href="/neutrino/admin/new/translation/?type=Template&amp;lg=en"><span class="lang-sm lang-lbl-full" lang="en"></span></a></li>
+                                            <li><a href="/neutrino/admin/new/translation/?type=Template&amp;lg=fr"><span class="lang-sm lang-lbl-full" lang="fr"></span></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="input-group"><input type="text" placeholder="{{'list.toolbar.search' | translate}}" class="input-sm form-control"> 
+                            <span class="input-group-btn"> <button type="button" class="btn btn-sm btn-primary"> {{'list.toolbar.searchGo' | translate}}</button> </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-9 m-b-xs">
+                        <div class="btn-group">
+                            <ul class="pagination">
+                                <li class="paginate_button previous disabled"><a href="?type=Template&amp;page=-1">{{'list.toolbar.previous' | translate}}</a></li>
+                                <li class="active"><a href="?type=Template&amp;page=0">1</a></li>
+                                <li><a href="?type=Template&amp;page=1">2</a></li>
+                                <li><a href="?type=Template&amp;page=2">3</a></li>	
+                                <li><a href="?type=Template&amp;page=3">4</a></li>
+                                <li class="disabled"><a href="">...</a></li>
+                                <li><a href="?type=Template&amp;page=7">8</a></li>
+                                <li class="paginate_button next"><a href="?type=Template&amp;page=1">{{'list.toolbar.next' | translate}}</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+
+                    </div>
+                </div>

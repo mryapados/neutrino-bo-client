@@ -1,0 +1,16 @@
+{
+  "list": {
+    "toolbar": {
+        "btnAdd" : "Ajouter",
+        "btnRemove" : "Supprimer",
+        "byPage" : "par page",
+        "sortBy" : "Trié par",
+        "sortASC" : "Croissant",
+        "sortDESC" : "Décroissant",
+        "search" : "Recherche",
+        "searchGo" : "Aller !",
+        "previous" : "Précédent",
+        "next" : "Suivant"
+    }
+  }
+}
