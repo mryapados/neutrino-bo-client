@@ -1,6 +1,6 @@
 /**
- * 
- * 
+ *
+ *
  */
 
 export class PageRequest {
@@ -8,13 +8,13 @@ export class PageRequest {
     size: number ;
     sortField: String;
     sortType: String;
-    
+
     constructor(options: {
         page?: number,
-        size?: number, 
-        sortField?: String, 
+        size?: number,
+        sortField?: String,
         sortType?: String
-    }){
+    }) {
         this.page = options.page ? options.page : 0;
         this.size = options.size ? options.size : 10;
         this.sortField = options.sortField ? options.sortField : 'dateAdded';
@@ -28,5 +28,5 @@ export class PageRequest {
 
         return page + '&' + size + '&' + sort;
     }
-    
+
 }

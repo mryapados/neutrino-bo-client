@@ -11,7 +11,7 @@ import { ToolbarsComponent } from './list/toolbars/toolbars.component';
 
 @NgModule({
   imports: [
-    CommonModule, ToolsModule, SharedModule, FormsModule, 
+    CommonModule, ToolsModule, SharedModule, FormsModule,
     RouterModule.forChild(ROUTES)
   ],
   declarations: [ListComponent, ToolbarsComponent]

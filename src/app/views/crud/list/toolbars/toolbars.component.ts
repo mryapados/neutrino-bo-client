@@ -13,36 +13,36 @@ export class ToolbarsComponent implements OnInit {
   @Input() pageRequest: PageRequest;
   @Input() fields: String[];
   @Input() searchRequest: SearchRequest;
-  @Output() onSubmitRequest : EventEmitter<void> = new EventEmitter<void>();
+  @Output() onSubmitRequest: EventEmitter<void> = new EventEmitter<void>();
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  setPage(page: number): void{
-    if (page >= 0 && page <= this.totalPages){
+  setPage(page: number): void {
+    if (page >= 0 && page <= this.totalPages) {
       this.pageRequest.page = page;
       this.onSubmitRequest.emit();
     }
   }
 
-  setPageSize(size: number): void{
+  setPageSize(size: number): void {
     this.pageRequest.size = size;
     this.onSubmitRequest.emit();
   }
 
-  setSortField(field: String): void{
+  setSortField(field: String): void {
     this.pageRequest.sortField = field;
     this.onSubmitRequest.emit();
   }
 
-  setSortType(type: String): void{
+  setSortType(type: String): void {
     this.pageRequest.sortType = type;
     this.onSubmitRequest.emit();
   }
 
-  setSearchExpression(expression: String): void{
+  setSearchExpression(expression: String): void {
     this.searchRequest.expression = expression;
     this.onSubmitRequest.emit();
   }
