@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { SharedModule } from './../../shared/shared.module';
 import { ToolsModule } from './../../components/common/tools/tools.module';
 import { LayoutsModule } from './../../components/common/layouts/layouts.module';
@@ -10,7 +11,7 @@ import { ToolbarsComponent } from './list/toolbars/toolbars.component';
 
 @NgModule({
   imports: [
-    CommonModule, ToolsModule, SharedModule,
+    CommonModule, ToolsModule, SharedModule, FormsModule, 
     RouterModule.forChild(ROUTES)
   ],
   declarations: [ListComponent, ToolbarsComponent]

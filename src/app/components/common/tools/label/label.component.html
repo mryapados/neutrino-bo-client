@@ -1,1 +1,1 @@
-<span class="label" [ngClass]="[classCss, pullRight ? 'pull-right' : '']">{{label}}</span>
+<span class="label" [ngClass]="[classCss ? classCss : '', pullRight ? 'pull-right' : '']">{{label}}</span>

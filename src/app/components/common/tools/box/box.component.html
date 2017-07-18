@@ -1,8 +1,8 @@
 <div class="ibox float-e-margins {{title}}">
 	<div class="ibox-title">
-		<h5>{{title}}</h5> <app-label [label]="label.label" [classCss]="label.classCss" [pullRight]="label.pullRight"></app-label>
-		<div class="ibox-tools" *ngIf="tool.display">
-			<ng-container *ngIf="tool.collapseBtn">
+		<h5>{{title}}</h5> <app-label [label]="label?.label" [classCss]="label?.classCss" [pullRight]="label?.pullRight"></app-label>
+		<div class="ibox-tools" *ngIf="tool?.display">
+			<ng-container *ngIf="tool?.collapseBtn">
 				<a class="collapse-link" (click)="collapse()">
 					<i class="fa fa-chevron-up"></i>
 				</a>
@@ -20,7 +20,7 @@
 				</ul>
 				<!-- Fin TODO -->
 			</ng-container>
-			<ng-container *ngIf="tool.closeBtn">
+			<ng-container *ngIf="tool?.closeBtn">
 				<a class="close-link" (click)="close()">
 					<i class="fa fa-times"></i>
 				</a>

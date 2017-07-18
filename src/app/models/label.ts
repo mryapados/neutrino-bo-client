@@ -9,7 +9,7 @@ export class Label {
     pullRight: Boolean;
     
     constructor(options: {
-        label: String,
+        label?: String,
         classCss?: String,
         pullRight?: Boolean
     }){
