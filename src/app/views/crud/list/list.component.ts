@@ -1,3 +1,4 @@
+import { CrudService } from './../crud.service';
 import { Tool } from './../../../models/tool';
 import { SearchRequest } from './../../../models/searchrequest';
 import { PageRequest } from './../../../models/pagerequest';
@@ -21,14 +22,14 @@ export class ListComponent implements OnInit {
 
   searchRequest: SearchRequest;
 
-  constructor() { }
+  constructor(private crudService: CrudService) { }
 
   ngOnInit() {
     this.label = new Label({classCss: 'label-primary', pullRight: true});
     this.tool = new Tool({collapseBtn: false, closeBtn: false});
 
 
-
+    
 
 
     this.pageRequest = new PageRequest({page: 4});
@@ -38,6 +39,19 @@ export class ListComponent implements OnInit {
 
   getDatas(): void {
     console.log('getDatas()');
+
+
+
+    this.crudService.loadPage('Skill', this.pageRequest, this.searchRequest).subscribe(
+      page => {
+        console.log(page);
+      }
+    );
+
+
+
+
+
     this.label.label = '51 - 100 of 396';
 
 

@@ -1,3 +1,5 @@
+import { environment } from './../../../environments/environment';
+import { CrudService } from './crud.service';
 import { FormsModule } from '@angular/forms';
 import { SharedModule } from './../../shared/shared.module';
 import { ToolsModule } from './../../components/common/tools/tools.module';
@@ -14,6 +16,7 @@ import { ToolbarsComponent } from './list/toolbars/toolbars.component';
     CommonModule, ToolsModule, SharedModule, FormsModule,
     RouterModule.forChild(ROUTES)
   ],
-  declarations: [ListComponent, ToolbarsComponent]
+  declarations: [ListComponent, ToolbarsComponent], 
+  providers : [CrudService, {provide : 'API_URL', useValue : environment.apiUrl}]
 })
 export class CrudModule { }
