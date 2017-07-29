@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:8082/neutrino-resume/admin/resources'
+  apiUrl: 'http://localhost:8082/neutrino-resume/api/'
 };

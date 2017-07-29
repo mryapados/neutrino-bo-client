@@ -17,6 +17,6 @@ import { ToolbarsComponent } from './list/toolbars/toolbars.component';
     RouterModule.forChild(ROUTES)
   ],
   declarations: [ListComponent, ToolbarsComponent], 
-  providers : [CrudService, {provide : 'API_URL', useValue : environment.apiUrl}]
+  providers : [CrudService]
 })
 export class CrudModule { }

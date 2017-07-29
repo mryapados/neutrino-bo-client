@@ -1,8 +1,8 @@
+import { environment } from './../environments/environment';
 import { SharedModule } from './shared/shared.module';
 import { CrudModule } from './views/crud/crud.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { HttpModule, Http } from '@angular/http';
 import { RouterModule } from '@angular/router';
@@ -30,7 +30,7 @@ import {LayoutsModule} from './components/common/layouts/layouts.module';
     // Angular modules
     BrowserModule,
     SharedModule,
-    HttpModule,
+    HttpModule, 
 
     // Views
     MainViewModule,
@@ -44,7 +44,7 @@ import {LayoutsModule} from './components/common/layouts/layouts.module';
     RouterModule.forRoot(ROUTES),
     TranslateModule.forRoot(LOADER)
   ],
-  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}, {provide : 'API_URL', useValue : environment.apiUrl}],
   bootstrap: [AppComponent]
 })
 export class AppModule {
