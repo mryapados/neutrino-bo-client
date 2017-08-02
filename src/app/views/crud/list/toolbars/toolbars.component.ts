@@ -21,7 +21,7 @@ export class ToolbarsComponent implements OnInit {
   }
 
   setPage(page: number): void {
-    if (page >= 0 && page <= this.totalPages) {
+    if (page >= 0 && page <= this.totalPages - 1) {
       this.pageRequest.page = page;
       this.onSubmitRequest.emit();
     }
@@ -29,6 +29,7 @@ export class ToolbarsComponent implements OnInit {
 
   setPageSize(size: number): void {
     this.pageRequest.size = size;
+    this.pageRequest.page = 0; //RAZ numero page pour éviter pb affichage
     this.onSubmitRequest.emit();
   }
 

@@ -32,32 +32,39 @@ export class ListComponent implements OnInit {
     
 
 
-    this.pageRequest = new PageRequest({page: 4});
-    this.searchRequest = new SearchRequest({expression: 'bonjour'});
+    this.pageRequest = new PageRequest({});
+    this.searchRequest = new SearchRequest({});
     this.getDatas();
   }
 
   getDatas(): void {
-    console.log('getDatas()');
-
-
-
+    console.log('getDatas(\'' + this.pageRequest.display + '\',\'' + this.searchRequest.display + '\')');
     this.crudService.loadPage('Skill', this.pageRequest, this.searchRequest).subscribe(
       page => {
         console.log(page);
+
+        this.totalPages = page.totalPages;
+
+        this.pageRequest.page = page.number;
+        this.pageRequest.size = page.size;
+        this.pageRequest.sortField = page.sort[0].property;
+        this.pageRequest.sortType = page.sort[0].direction;
+
+        this.pageBtns = this.mkPageBtns(this.pageRequest.page, this.totalPages);
+
+        const begin = page.number * page.size;
+        const end = begin + page.numberOfElements;
+        this.label.label = begin + ' - ' + end + ' of ' + page.totalElements;
       }
     );
 
 
-
-
-
-    this.label.label = '51 - 100 of 396';
+    
 
 
     this.fields = ['id', 'name', 'dateAdded', 'dateUpdated', 'description', 'lang', 'controller', 'metaDescription', 'metaTitle', 'metaKeyWords']
-    this.totalPages = 45;
-    this.pageBtns = this.mkPageBtns(this.pageRequest.page, this.totalPages);
+
+    
     
   }
 
@@ -71,11 +78,11 @@ export class ListComponent implements OnInit {
 
     btns.add(0);
     btns.add(currentPage);
-    btns.add(totalPages);
+    btns.add(totalPages - 1);
 
     let p = 0;
     let sens: number = -1;
-    if (currentPage >= totalPages / 2) {
+    if (currentPage >= (totalPages / 2) - 1) {
     	sens = 1;
     }
     for (let m = 0; m <= maxPageBtns; m++) {
@@ -84,7 +91,7 @@ export class ListComponent implements OnInit {
           break;
         }
     		p = currentPage + (m * sens);
-    		if (p < totalPages && p > 0) {
+    		if (p < totalPages - 1 && p > 0) {
     			count--;
     			btns.add(p);
     		}

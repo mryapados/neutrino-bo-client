@@ -1,3 +1,4 @@
+import { HomeModule } from './views/home/home.module';
 import { environment } from './../environments/environment';
 import { SharedModule } from './shared/shared.module';
 import { CrudModule } from './views/crud/crud.module';
@@ -33,6 +34,7 @@ import {LayoutsModule} from './components/common/layouts/layouts.module';
     HttpModule, 
 
     // Views
+    HomeModule,
     MainViewModule,
     MinorViewModule,
     LoginModule,
@@ -44,7 +46,11 @@ import {LayoutsModule} from './components/common/layouts/layouts.module';
     RouterModule.forRoot(ROUTES),
     TranslateModule.forRoot(LOADER)
   ],
-  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}, {provide : 'API_URL', useValue : environment.apiUrl}],
+  providers: [
+    {provide: LocationStrategy, useClass: HashLocationStrategy}, 
+    {provide : 'AUTH_URL', useValue : environment.authUrl},
+    {provide : 'API_URL', useValue : environment.apiUrl}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

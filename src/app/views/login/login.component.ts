@@ -17,7 +17,7 @@ import 'rxjs/add/observable/of';
     templateUrl: 'login.template.html'
 })
 export class LoginComponent implements OnInit {
-//@Inject('API_URL') private baseUrl: string
+
     model: any = {};
     loading = false;
     error = '';

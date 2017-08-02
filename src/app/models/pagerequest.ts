@@ -4,8 +4,8 @@
  */
 
 export class PageRequest {
-    page: number ;
-    size: number ;
+    page: number;
+    size: number;
     sortField: String;
     sortType: String;
 
@@ -18,7 +18,7 @@ export class PageRequest {
         this.page = options.page ? options.page : 0;
         this.size = options.size ? options.size : 10;
         this.sortField = options.sortField ? options.sortField : 'dateAdded';
-        this.sortType = options.sortType ? options.sortField : 'ASC';
+        this.sortType = options.sortType ? options.sortType : 'ASC';
     }
 
     get display(): String {

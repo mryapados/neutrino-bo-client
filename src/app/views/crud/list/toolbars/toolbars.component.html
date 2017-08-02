@@ -7,6 +7,7 @@
                         <strong>{{pageRequest?.size}}</strong> {{'list.toolbar.byPage' | translate}} <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu" role="menu" aria-labelledby="top-page-size-btn">
+                        <li><a (click)="setPageSize(2)">2</a></li>
                         <li><a (click)="setPageSize(10)">10</a></li>
                         <li><a (click)="setPageSize(25)">25</a></li>
                         <li><a (click)="setPageSize(50)">50</a></li>
@@ -52,16 +53,16 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-sm-9 m-b-xs">
+    <div *ngIf="totalPages > 1" class="col-sm-9 m-b-xs">
         <div class="btn-group">
             <ul class="pagination">
                 <li class="paginate_button previous" [ngClass]="{disabled: pageRequest?.page == 0}"><a (click)="setPage(pageRequest.page - 1)">{{'list.toolbar.previous' | translate}}</a></li>
                 
                 <li *ngFor="let pageBtn of pageBtns;" [ngClass]="{active: pageRequest?.page == pageBtn, disabled: pageBtn == '...'}">
-                    <a (click)="setPage(pageBtn)">{{pageBtn}}</a>
+                    <a (click)="setPage(pageBtn)">{{pageBtn != '...' ? pageBtn + 1 : pageBtn}}</a>
                 </li>
 
-                <li class="paginate_button next" [ngClass]="{disabled: pageRequest?.page >= totalPages}"><a (click)="setPage(pageRequest.page + 1)">{{'list.toolbar.next' | translate}}</a></li>
+                <li class="paginate_button next" [ngClass]="{disabled: pageRequest?.page >= totalPages - 1}"><a (click)="setPage(pageRequest.page + 1)">{{'list.toolbar.next' | translate}}</a></li>
             </ul>
         </div>
     </div>

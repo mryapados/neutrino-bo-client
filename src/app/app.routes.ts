@@ -1,3 +1,5 @@
+import { CanActivateAuthGuard } from './views/login/can-activate.authguard';
+import { HomeComponent } from './views/home/home.component';
 import {Routes} from '@angular/router';
 import {MainViewComponent} from './views/main-view/main-view.component';
 import {MinorViewComponent} from './views/minor-view/minor-view.component';
@@ -9,12 +11,13 @@ import {BasicComponent} from './components/common/layouts/basic.component';
 
 export const ROUTES: Routes = [
   // Main redirect
-  {path: '', redirectTo: 'mainView', pathMatch: 'full'},
+  {path: '', redirectTo: 'home', pathMatch: 'full'},
 
   // App views
   {
     path: '', component: BasicComponent,
     children: [
+      {path: 'home', component: HomeComponent, canActivate: [CanActivateAuthGuard]},
       {path: 'mainView', component: MainViewComponent},
       {path: 'minorView', component: MinorViewComponent}
     ]
@@ -27,7 +30,7 @@ export const ROUTES: Routes = [
     ]
   },
   {
-    path: 'crud', component: BasicComponent, loadChildren: 'app/views/crud/crud.module#CrudModule'
+    path: 'crud', component: BasicComponent, loadChildren: 'app/views/crud/crud.module#CrudModule', canActivate: [CanActivateAuthGuard]
   },
 
   // Handle all other routes

@@ -7,11 +7,9 @@ import 'rxjs/add/observable/throw';
 
 @Injectable()
 export class AuthenticationService {
-    private authUrl;
     private headers = new Headers({'Content-Type': 'application/json'});
 
-    constructor(private http: Http, @Inject('API_URL') private baseUrl: string) {
-        this.authUrl = baseUrl + 'auth';
+    constructor(private http: Http, @Inject('AUTH_URL') private authUrl: string) {
     }
 
     isLoggedIn(): boolean {

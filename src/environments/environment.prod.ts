@@ -1,4 +1,5 @@
 export const environment = {
   production: true,
-  apiUrl: 'http://localhost:8082/neutrino-resume/api/'
+  authUrl: 'http://localhost:8082/neutrino-resume/api/auth',
+  apiUrl: 'http://localhost:8082/neutrino-resume/api/admin'
 };
